@@ -1,27 +1,35 @@
-/*
-Colors:
-
-Text: 1A1A1A
-Green: #00B172
-White: #FFF
-
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;600;800&display=swap');
 html {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
+  color: #1a1a1a;
 }
 * {
   margin: inherit;
   padding: inherit;
 }
-header + section {
-  background: url(/images/landing.jpg) no-repeat;
+section:first-of-type {
+  background: url(/images/landing.jpg);
   background-size: cover;
-  height: 900px;
+  min-height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+section:first-of-type h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+section:first-of-type p {
+  font-size: 1.2rem;
+  font-weight: 300;
 }
 header {
   position: fixed;
@@ -30,17 +38,25 @@ header {
 }
 nav {
   max-width: 1080px;
+  color: #1a1a1a;
   display: flex;
   height: 4rem;
   justify-content: space-between;
   margin: 0 auto;
   align-items: center;
 }
+a:visited {
+  color: #1a1a1a;
+}
 nav img {
   height: 3rem;
 }
 nav > * {
   margin: 0;
+}
+.dropdown {
+  top: 10.6rem;
+  display: relative;
 }
 .dropdown > a {
   display: flex;
@@ -49,14 +65,14 @@ nav > * {
   position: relative;
 }
 nav > div.dropdown ul {
-  width: 16rem;
   display: flex;
   flex-direction: column;
   list-style: none;
   font-size: 1.1rem;
   background-color: white;
-  position: absolute;
+  position: relative;
   display: none;
+  top: 10.6rem;
 }
 
 nav > div.dropdown ul li :hover {
@@ -65,17 +81,112 @@ nav > div.dropdown ul li :hover {
 nav > div.dropdown:hover ul {
   display: block;
 }
-ul li > a {
+ul li a {
   text-align: center;
   max-height: 4rem;
   padding: 2rem;
   display: inline-block;
   text-decoration: none;
-  color: inherit;
-  width: 100%;
+  width: 10rem;
 }
 section {
   width: 100%;
 }
+#what-section {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+#what-section > h3 {
+  width: 100%;
+  font-size: 2rem;
+  padding-bottom: 0.1rem;
+  text-decoration: underline 4px #00b172;
+  text-underline-offset: 0.7rem;
+  margin: 5rem 0;
+}
+.card-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  text-align: center;
+  max-width: 1080px;
+}
+.icons {
+  flex: 1;
+  width: 8rem;
+  text-align: center;
+}
+.icons + h4 {
+  color: #00b172;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.icons + h4 + p {
+  font-size: 1.5rem;
+  max-width: 18rem;
+  font-weight: 300;
+  margin-bottom: 5rem 0px;
+}
+
 @media (min-width: 900px) {
+  ul li a {
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    display: inline-block;
+    width: inherit;
+    transition: all 1s ease;
+  }
+  ul li {
+    display: flex;
+    align-items: center;
+    border: 0;
+    transition: all 1s ease;
+  }
+  .dropdown {
+    display: flex;
+    flex-direction: row;
+    transition: all 1s ease;
+  }
+  nav > div.dropdown ul {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.1rem;
+    background-color: white;
+    position: static;
+    top: unset;
+    transition: all 1s ease;
+  }
+  .dropdown > a {
+    display: none;
+  }
+  nav > div.dropdown ul li :hover {
+    background: unset;
+  }
+  nav > div.dropdown:hover ul {
+    display: inherit;
+  }
+  section:first-of-type h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    transition: all 1s ease;
+  }
+  section:first-of-type p {
+    max-width: 60rem;
+    font-size: 2rem;
+    font-weight: 300;
+    transition: all 1s ease;
+  }
+  #what-section {
+    flex-flow: row wrap;
+  }
+  .card-wrapper {
+    width: 1080px;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
 }
