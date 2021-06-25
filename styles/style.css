@@ -10,11 +10,10 @@ html {
   margin: inherit;
   padding: inherit;
 }
-section:first-of-type {
+#hero-section {
   background: url(/images/landing.jpg);
   background-size: cover;
   min-height: 900px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,9 +34,12 @@ header {
   position: fixed;
   background-color: #fff;
   width: 100%;
+  z-index: 30;
+}
+.max-width {
+  max-width: 1080px;
 }
 nav {
-  max-width: 1080px;
   color: #1a1a1a;
   display: flex;
   height: 4rem;
@@ -50,6 +52,7 @@ a:visited {
 }
 nav img {
   height: 3rem;
+  margin-left: 1rem;
 }
 nav > * {
   margin: 0;
@@ -109,26 +112,94 @@ section {
 }
 .card-wrapper {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   align-content: center;
   text-align: center;
   max-width: 1080px;
+}
+.card-wrapper div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-wrapper div:not(div:last-child) {
+  margin-bottom: 2rem;
 }
 .icons {
   flex: 1;
   width: 8rem;
   text-align: center;
+  margin-bottom: 1rem;
 }
 .icons + h4 {
   color: #00b172;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 .icons + h4 + p {
-  font-size: 1.5rem;
-  max-width: 18rem;
+  font-size: 1.3rem;
+  max-width: 16rem;
   font-weight: 300;
   margin-bottom: 5rem 0px;
+}
+
+#yeezy {
+  display: flex;
+  justify-content: center;
+}
+.green-area {
+  color: #fff;
+  margin: 4rem 1rem 1rem;
+  background: #00b172;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  padding-left: 0.3rem;
+  justify-content: center;
+  align-items: center;
+}
+.white-logo {
+  display: none;
+}
+.green-area div > img {
+  max-width: 25rem;
+}
+
+.green-area :not(div:last-child) {
+  padding: 0;
+  margin: 1rem 1rem 1.7rem 0;
+}
+.green-area h3:first-child {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-decoration: underline 4px #fff;
+  text-underline-offset: 1rem;
+  text-align: center;
+}
+.green-area div h4 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+.green-area div p {
+  max-width: 20rem;
+  font-weight: 400;
+  line-height: 1.85rem;
+}
+#tiny-footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+}
+footer a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5rem 0.3rem;
 }
 
 @media (min-width: 900px) {
@@ -175,7 +246,7 @@ section {
     font-weight: 600;
     transition: all 1s ease;
   }
-  section:first-of-type p {
+  #hero-section p {
     max-width: 60rem;
     font-size: 2rem;
     font-weight: 300;
@@ -187,6 +258,19 @@ section {
   .card-wrapper {
     width: 1080px;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
+  }
+  .white-logo {
+    display:unset;
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+  }
+  .green-area{
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .green-area div > img {
+    max-width: 18rem;
   }
 }
