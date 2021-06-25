@@ -11,7 +11,7 @@ html {
   padding: inherit;
 }
 #hero-section {
-  background: url(/images/landing.jpg);
+  background: url(images/landing.jpg);
   background-size: cover;
   min-height: 900px;
   display: flex;
